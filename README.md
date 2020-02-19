@@ -19,6 +19,8 @@ git clone --recursive https://github.com/remap/DDTools
 ```
 
 4. Open your PluginDev project, navigate to your plugin's *\<YourPlugin> Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
+> If you don't see plugin's content, go in to the *Content Browser -> View Options -> Show Plugin Content*
+
 5. Open Plugins window in the Editor (Settings -> Plugins) and enable your plugin.
 6. Restart your project. It will prompt you to recompile found plugins, click "Yes".
 
