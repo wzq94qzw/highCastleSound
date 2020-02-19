@@ -13,9 +13,14 @@ bash <(curl -s https://raw.githubusercontent.com/peetonn/UE4_BoilerplatePlugin/m
 > 1. The plugin code and structure will be generated and new git commit will be created. You must add new remote for your Plugin repo. Follow the instructions on adding git remote shown on the screen.
 > 2. You should also add your plugin repo as a git submodule to your PluginDev repo.
 
-3. Open your PluginDev project, navigate to your plugin's *Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
-4. Open Plugins window in the Editor (Settings -> Plugins) and enable your plugin.
-5. Restart your project. It will prompt you to recompile found plugins, click "Yes".
+3. Clone [DDTools](https://github.com/remap/DDTools) into your Plugins folder **recursively**:
+```
+git clone --recursive https://github.com/remap/DDTools
+```
+
+4. Open your PluginDev project, navigate to your plugin's *Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
+5. Open Plugins window in the Editor (Settings -> Plugins) and enable your plugin.
+6. Restart your project. It will prompt you to recompile found plugins, click "Yes".
 
 This will create main module code for your plugin. You can now start adding code to your plugin.
 
