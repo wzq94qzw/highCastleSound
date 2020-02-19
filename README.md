@@ -3,14 +3,69 @@ Boilerplate code for a C++/BP plugin that handles dependencies automatically.
 
 ## Setup
 
-In Terminal, navigate to your Unreal project's "Plugins" folder (create one if it does not exist already) and run this command:
-
+1. In Terminal, navigate to your Unreal project's "Plugins" folder (create one if it does not exist already) and run this command:
+> ❗️ If you don't have Unreal Project, set it up first (basic C++ project will suffice). This project will be your *plugin development* (PluginDev) project and should be published under your github account.
 ```
 bash <(curl -s https://raw.githubusercontent.com/peetonn/UE4_BoilerplatePlugin/master/bootstrap.sh)
 ```
 
-Restart your project. It will prompt you to recompile found plugins, click "Yes".
+2. When asked, provide your plugin name (do **not** use words "*boilerplate*", *"Plugin"* or *"Module"* in your plugin name) and hit Enter.
+> The plugin code and structure will be generated and new gfit commit will be created. You must add new remote for your Plugin repo. Follow the instructions on adding git remote shown on the screen.
+
+3. Open your PluginDev project, navigate to your plugin's *Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
+4. Open Plugins window in the Editor (Settings -> Plugins) and enable your plugin.
+5. Restart your project. It will prompt you to recompile found plugins, click "Yes".
+
 This will create main module code for your plugin. You can now start adding code to your plugin.
+
+## Quick Start with the Boilerplate Code
+
+After generation is complete, your plugin will be organized as follows:
+```
+YourPlugin/
+├── Config
+├── Content   // you can add arbitrary content required by your plugin here
+│   └── UI
+│       └── BP_YourPluginModulePanel.uasset   // your plugin UI panel, use it if you plugin needs debug UI
+├── README.md   // add information about your plugin and how to use it here
+├── Resources
+├── Source
+│   ├── YourPlugin        // main module of your plugin; you can add more modules into your plugin if necessary
+│   │   ├── Private       // all private internals go here 
+│   │   │   ├── YourPlugin.cpp
+│   │   │   └── git-describe.h
+│   │   ├── Public        // all public plugin interfaces go here
+│   │   │   └── YourPlugin.h 
+│   │   └── YourPlugin.Build.cs
+│   ├── YourPluginTest    // test code for your module should go here
+│   │   ├── Private
+│   │   │   ├── YourPluginTest.cpp
+│   │   │   └── git-describe.h
+│   │   ├── Publi
+│   │   │   └── YourPluginTest.h 
+│   │   └── YourPluginTest.Build.cs
+│   └── ThirdParty
+│       └── depsTest1   // module for adding arbitrary third-party dependencies
+│           ├── depsTest1.Build.cs
+│           └── depsTest1.tps
+└── YourPlugin.uplugin
+```
+
+See the notes on the diagram above.
+
+1. You can start adding code, content or blueprints to your plugin:
+* Code goes into *Source/YourPlugin* module (or add more modules if you need to modularize for better structure).
+* Blueprints go into *Content/Blueprints* folder.
+* Assets go into *Content/Assets* folder.
+* Test Blueprints go into *Content/Test/Blueprints*
+* Test Assets go into *Content/Test/Assets*
+2. Add sample code or any examples on how to use your plugin.
+> 😃 Use *"YourPluginTest"* to do you main development and testing of the plugin. This can also serve as an example code on how to use it.
+
+### Debug UI
+
+By default, your plugin will be set up with Debug UI widget (*Content/UI/BP_YourPluginMpdulePanel.uasset*) which is loaded automatically by the shell app code and shows information about your plugin, such as name, version, build type, etc.
+You can use this panel to add more debug/status UIs related to your plugin.
 
 ## Adding Third Party Dependencies
 
