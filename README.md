@@ -17,6 +17,7 @@ bash <(curl -s https://raw.githubusercontent.com/peetonn/UE4_BoilerplatePlugin/m
 ```
 git clone --recursive https://github.com/remap/DDTools
 ```
+> Add it as a git submodule to your PluginDev project repo, too.
 
 4. Open your PluginDev project, navigate to your plugin's *\<YourPlugin> Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
 > If you don't see plugin's content, go in to the *Content Browser -> View Options -> Show Plugin Content*
