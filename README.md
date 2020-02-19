@@ -18,7 +18,7 @@ bash <(curl -s https://raw.githubusercontent.com/peetonn/UE4_BoilerplatePlugin/m
 git clone --recursive https://github.com/remap/DDTools
 ```
 
-4. Open your PluginDev project, navigate to your plugin's *<YourPlugin> Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
+4. Open your PluginDev project, navigate to your plugin's *\<YourPlugin> Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
 5. Open Plugins window in the Editor (Settings -> Plugins) and enable your plugin.
 6. Restart your project. It will prompt you to recompile found plugins, click "Yes".
 
