@@ -10,11 +10,20 @@ bash <(curl -s https://raw.githubusercontent.com/peetonn/UE4_BoilerplatePlugin/m
 ```
 
 2. When asked, provide your plugin name (do **not** use words "*boilerplate*", *"Plugin"* or *"Module"* in your plugin name) and hit Enter.
-> The plugin code and structure will be generated and new gfit commit will be created. You must add new remote for your Plugin repo. Follow the instructions on adding git remote shown on the screen.
+> 1. The plugin code and structure will be generated and new git commit will be created. You must add new remote for your Plugin repo. Follow the instructions on adding git remote shown on the screen.
+> 2. You should also add your plugin repo as a git submodule to your PluginDev repo.
 
-3. Open your PluginDev project, navigate to your plugin's *Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
-4. Open Plugins window in the Editor (Settings -> Plugins) and enable your plugin.
-5. Restart your project. It will prompt you to recompile found plugins, click "Yes".
+3. Clone [DDTools](https://github.com/remap/DDTools) into your Plugins folder **recursively**:
+```
+git clone --recursive https://github.com/remap/DDTools
+```
+> Add it as a git submodule to your PluginDev project repo, too.
+
+4. Open your PluginDev project, navigate to your plugin's *\<YourPlugin> Content/UI* folder, and rename **"BP_ModulePanel"** to **"BP_\<your plugin name>ModulePanel"**
+> If you don't see plugin's content, go in to the *Content Browser -> View Options -> Show Plugin Content*
+
+5. Open Plugins window in the Editor (Settings -> Plugins) and enable your plugin.
+6. Restart your project. It will prompt you to recompile found plugins, click "Yes".
 
 This will create main module code for your plugin. You can now start adding code to your plugin.
 
@@ -26,7 +35,7 @@ YourPlugin/
 ├── Config
 ├── Content   // you can add arbitrary content required by your plugin here
 │   └── UI
-│       └── BP_YourPluginModulePanel.uasset   // your plugin UI panel, use it if you plugin needs debug UI
+│       └── BP_YourPluginModulePanel.uasset   // your plugin UI panel, use it if your plugin needs debug UI
 ├── README.md   // add information about your plugin and how to use it here
 ├── Resources
 ├── Source
@@ -54,13 +63,13 @@ YourPlugin/
 See the notes on the diagram above.
 
 1. You can start adding code, content or blueprints to your plugin:
-* Code goes into *Source/YourPlugin* module (or add more modules if you need to modularize for better structure).
-* Blueprints go into *Content/Blueprints* folder.
-* Assets go into *Content/Assets* folder.
-* Test Blueprints go into *Content/Test/Blueprints*
-* Test Assets go into *Content/Test/Assets*
+* **Code** goes into *Source/YourPlugin* module (or add more modules if you need to modularize for better structure).
+* **Blueprints** go into *Content/Blueprints* folder.
+* **Assets** go into *Content/Assets* folder.
+* **Test Blueprints** go into *Content/Test/Blueprints*
+* **Test Assets** go into *Content/Test/Assets*
 2. Add sample code or any examples on how to use your plugin.
-> 😃 Use *"YourPluginTest"* to do you main development and testing of the plugin. This can also serve as an example code on how to use it.
+> 😃 Use **YourPluginTest** to do you main development and testing of the plugin. This can also serve as an example code on how to use it.
 
 ### Debug UI
 
