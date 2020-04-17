@@ -6,7 +6,7 @@ Boilerplate code for a C++/BP plugin that handles dependencies automatically.
 1. In Terminal, navigate to your Unreal project's "Plugins" folder (create one if it does not exist already) and run this command:
 > ❗️ If you don't have Unreal Project, set it up first (basic C++ project will suffice). This project will be your *plugin development* (PluginDev) project and should be published under your github account.
 ```
-bash <(curl -s https://raw.githubusercontent.com/peetonn/UE4_BoilerplatePlugin/master/bootstrap.sh)
+bash <(curl -s https://raw.githubusercontent.com/remap/UE4_BoilerplatePlugin/master/bootstrap.sh)
 ```
 
 2. When asked, provide your plugin name (do **not** use words "*boilerplate*", *"Plugin"* or *"Module"* in your plugin name) and hit Enter.
