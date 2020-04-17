@@ -99,7 +99,7 @@ If, for some reason, bootstrapping instructions above didn't work, here are the 
 
 1. Clone the repo:
 ```
-git clone https://github.com/peetonn/UE4_BoilerplatePlugin.git
+git clone https://github.com/remap/UE4_BoilerplatePlugin.git
 ```
 
 2. Rename cloned directory into your **plugin name** (substitute `<plugin name>` with your **plugin name**, for example *OSCSupport*).
